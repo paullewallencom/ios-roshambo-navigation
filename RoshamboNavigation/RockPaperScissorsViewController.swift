@@ -56,11 +56,11 @@ class RockPaperScissorsViewController : UIViewController {
         if (playersMove == RPS.rock) {
             // Get the storyboard and ResultViewController
             let storyboard = UIStoryboard (name : "Main", bundle : nil)
-            let resultVC = storyboard.instantiateViewController (withIdentifier : "ResultViewController")as! ResultViewController
+            let resultVC = storyboard.instantiateViewController (withIdentifier : "ResultViewController") as! ResultViewController
         
             // Communicate the match
             resultVC.match = self.match
-            self.present (resultVC, animated : true, completion : nil)
+            self.navigationController?.pushViewController (resultVC, animated : true)
         }
         
         // 2nd Way: Code plus Segue
